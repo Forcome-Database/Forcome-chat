@@ -17,7 +17,7 @@ RUN apk update && apk add --no-cache git
 
 ENV OPENAI_API_KEY="sk-LKC2qVuU1YCbUb20A45437Bd8aA845B5931c0444Ee63De82"
 ENV BASE_URL="https://api.forcome.com"
-ENV CODE=""
+ 
 
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -28,13 +28,11 @@ RUN yarn build
 FROM base AS runner
 WORKDIR /app
 
-RUN apk add proxychains-ng
+RUN apk add proxychains-ng 
 
-ENV PROXY_URL=""
 ENV OPENAI_API_KEY="sk-LKC2qVuU1YCbUb20A45437Bd8aA845B5931c0444Ee63De82"
 ENV BASE_URL="https://api.forcome.com" 
-ENV GOOGLE_API_KEY=""
-ENV CODE=""
+ 
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
