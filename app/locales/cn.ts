@@ -8,12 +8,12 @@ const cn = {
   Error: {
     Unauthorized: isApp
       ? `😆 对话遇到了一些问题，不用慌:  
-      \ 1️⃣ 点击[这里](/#/settings)修改设置 ⚙️(https://chat.forcome.com)
+      \ 1️⃣ 点击[这里](/#/settings)修改设置 ⚙️
       \ 2️⃣ 点击“自定义接口” 勾选， 
       \ 2️⃣ 填写接口地址 https://api.forcome.com/ 
       \ 3️⃣ 填写填写key sk-LKC2qVuU1YCbUb20A45437Bd8aA845B5931c0444Ee63De82🔑`
       : `😆 对话遇到了一些问题，不用慌:  
-      \ 1️⃣ 点击[这里](/#/settings)修改设置 ⚙️(https://chat.forcome.com)
+      \ 1️⃣ 点击[这里](/#/settings)修改设置 ⚙️
       \ 2️⃣ 点击“自定义接口” 勾选， 
       \ 2️⃣ 填写接口地址 https://api.forcome.com/ 
       \ 3️⃣ 填写填写key sk-LKC2qVuU1YCbUb20A45437Bd8aA845B5931c0444Ee63De82🔑
