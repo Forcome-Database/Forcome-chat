@@ -15,8 +15,8 @@ FROM base AS builder
 
 RUN apk update && apk add --no-cache git
 
-ENV OPENAI_API_KEY=""
-ENV GOOGLE_API_KEY=""
+ENV OPENAI_API_KEY="sk-LKC2qVuU1YCbUb20A45437Bd8aA845B5931c0444Ee63De82"
+ENV BASE_URL="https://api.forcome.com"
 ENV CODE=""
 
 WORKDIR /app
