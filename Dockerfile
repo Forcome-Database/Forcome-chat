@@ -14,9 +14,6 @@ RUN yarn install
 FROM base AS builder
 
 RUN apk update && apk add --no-cache git
-
-ENV OPENAI_API_KEY="sk-LKC2qVuU1YCbUb20A45437Bd8aA845B5931c0444Ee63De82"
-ENV BASE_URL="https://api.forcome.com"
  
 
 WORKDIR /app
@@ -31,13 +28,19 @@ WORKDIR /app
 RUN apk add proxychains-ng 
 
 ENV OPENAI_API_KEY="sk-LKC2qVuU1YCbUb20A45437Bd8aA845B5931c0444Ee63De82"
-ENV BASE_URL="https://api.forcome.com" 
- 
+ENV BASE_URL="https://api.forcome.com"  
+ENV PROXY_URL="" 
+ENV GOOGLE_API_KEY=""
+ENV CODE=""
+ENV ENABLE_MCP=""
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/.next/server ./.next/server
+
+RUN mkdir -p /app/app/mcp && chmod 777 /app/app/mcp
+COPY --from=builder /app/app/mcp/mcp_config.default.json /app/app/mcp/mcp_config.json
 
 EXPOSE 3000
 
